@@ -20,14 +20,15 @@ public class Produto {
 	private long id;
 
 	@NotNull
-	@Size(max = 70)
+	@Size(min = 3, max = 100)
 	private String nome;
 
 	@NotNull
+	@Size(min = 3, max = 300)
 	private String descricao;
 	
 	@NotNull
-	private String nivel;
+	private String link;
 
 	@NotNull
 	@ManyToOne
@@ -78,4 +79,13 @@ public class Produto {
 	public void setCriador(Usuario criador) {
 		this.criador = criador;
 	}
+
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
+	}
+	
 }

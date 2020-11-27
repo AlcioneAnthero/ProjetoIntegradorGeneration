@@ -23,15 +23,15 @@ public class Usuario {
 	private long id;
 	
 	@NotNull
-	@Size(max = 70)
+	@Size(min = 3, max = 100)
 	private String nome;
 	
 	@NotNull
-	@Size(max = 70)
+	@Size(max = 100)
 	private String email;
 	
 	@NotNull
-	@Size(min = 8, max = 70)
+	@Size(min = 8, max = 100)
 	private String senha;
 	
 	@OneToMany(mappedBy = ("criador"), cascade = CascadeType.ALL)

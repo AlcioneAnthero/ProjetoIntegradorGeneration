@@ -11,11 +11,11 @@ public class UserDetailsImpl implements UserDetails{
 	
 	private static final long serialVersionUID = 1L;
 	
-	private String email;
+	private String userName;
 	private String password;
 	
 	public UserDetailsImpl(Usuario user) {
-		this.email = user.getEmail();
+		this.userName = user.getEmail();
 		this.password = user.getSenha();
 	}
 	public UserDetailsImpl() {
@@ -37,7 +37,7 @@ public class UserDetailsImpl implements UserDetails{
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return email;
+		return userName;
 	}
 
 	@Override

@@ -38,7 +38,8 @@ public class UsuarioController {
 
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario) {
-		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.CadastrarUsuario(usuario));
+		return ResponseEntity.status(HttpStatus.CREATED)
+				.body(usuarioService.CadastrarUsuario(usuario));
 	}
 
 	@GetMapping
@@ -54,6 +55,11 @@ public class UsuarioController {
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<Usuario>> getByNome(@PathVariable String nome) {
 		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
+	}
+	
+	@GetMapping("/email/{email}")
+	public Optional<Usuario> getByEmail(@PathVariable String email) {
+		return repository.findByEmail(email);
 	}
 
 	@PostMapping

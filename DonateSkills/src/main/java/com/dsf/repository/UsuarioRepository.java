@@ -9,5 +9,6 @@ import com.dsf.model.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 
 	public List<Usuario> findAllByNomeContainingIgnoreCase(String nome);
+	public Usuario findByEmailContainingIgnoreCase(String email);
 	public Optional<Usuario> findByEmail(String email);
 }

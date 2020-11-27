@@ -23,26 +23,26 @@ public class Categoria {
 
 	@NotNull
 	@Size(max = 70)
-	private String tipoCurso;
+	private String descricao;
 
 	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("categoria")
 	private List<Produto> produto;
 
-	public long getid() {
+	public long getId() {
 		return id;
 	}
 
-	public void setid(long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
-	public String gettipoCurso() {
-		return tipoCurso;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void settipoCurso(String tipoCurso) {
-		this.tipoCurso = tipoCurso;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public List<Produto> getProduto() {
@@ -52,5 +52,4 @@ public class Categoria {
 	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
 	}
-
 }

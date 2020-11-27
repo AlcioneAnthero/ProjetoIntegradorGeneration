@@ -9,6 +9,6 @@ import com.dsf.model.Categoria;
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 
-	public List<Categoria> findAllByTipoCursoContainingIgnoreCase(String tipoCurso);
+	public List<Categoria> findAllByDescricaoContainingIgnoreCase(String descricao);
 
 }
